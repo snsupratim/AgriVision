@@ -89,7 +89,7 @@ const AIAgricultureIcon = () => (
 
 const categories = [
   {
-    href: "/yield-prediction",
+    href: "http://127.0.0.1:8080",
     name: "Yield Prediction",
     description:
       "Our advanced AI models analyze historical data, weather patterns, and soil conditions to provide accurate crop yield predictions. Make informed decisions about planting, resource allocation, and harvest timing.",
@@ -103,14 +103,14 @@ const categories = [
     icon: Activity,
   },
   {
-    href: "/crop-detection",
-    name: "Crop Detection",
+    href: "/crop-recommendation",
+    name: "Crop Recommendation",
     description:
-      "Monitor your crops throughout their growth cycle with our automated detection system. Using satellite imagery and AI, we help you track crop health, growth stages, and potential issues in real-time.",
+      "AI powered system will suggest you , which crop to start farming as per various parameter.",
     icon: Leaf,
   },
   {
-    href: "/vegetation-index",
+    href: "http://127.0.0.1:7000",
     name: "Vegetation Index",
     description:
       "Access detailed vegetation indices to understand your crop's health status. Our tools provide NDVI, EVI, and other crucial metrics to help you optimize irrigation and fertilization strategies.",
@@ -136,7 +136,7 @@ const MainPage = () => {
         {/* Hero Section */}
         <div className="grid md:grid-cols-2 gap-8 items-center mb-20">
           <div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-green-400 mb-6">
+            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
               Welcome to AgriVision
             </h1>
             <p className="text-xl text-gray-200">
@@ -152,7 +152,7 @@ const MainPage = () => {
         </div>
 
         {/* About Section */}
-        <div className=" rounded-xl p-8 mb-20">
+        <div className="rounded-xl p-8 mb-20 bg-white/10 backdrop-blur-lg">
           <h2 className="text-3xl font-bold text-green-400 mb-4">
             About AgriVision
           </h2>
@@ -168,31 +168,23 @@ const MainPage = () => {
         </div>
 
         {/* Categories Section */}
-        <div className="space-y-16">
+        {/* Categories Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
               <div
                 key={category.name}
-                className="grid md:grid-cols-5 gap-8 items-center group cursor-pointer"
+                className="backdrop-blur-lg bg-white/10 p-6 rounded-xl shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:bg-white/20"
                 onClick={() => handleNavigate(category.href)}
               >
-                <div className="md:col-span-1 flex justify-center">
-                  <div
-                    className="w-24 h-24 rounded-full bg-green-400/20 flex items-center justify-center
-                                group-hover:bg-green-400/30 transition-all"
-                  >
-                    <IconComponent className="w-12 h-12 text-green-400" />
-                  </div>
+                <div className="flex items-center justify-center w-16 h-16 bg-green-400/20 rounded-full mb-4 transition-transform duration-300 hover:scale-110">
+                  <IconComponent className="w-10 h-10 text-green-400" />
                 </div>
-                <div className="md:col-span-4">
-                  <h3 className="text-2xl font-semibold text-green-400 mb-3 group-hover:text-green-300 transition-colors">
-                    {category.name}
-                  </h3>
-                  <p className="text-gray-200 text-lg">
-                    {category.description}
-                  </p>
-                </div>
+                <h3 className="text-xl font-semibold text-green-300 mb-2">
+                  {category.name}
+                </h3>
+                <p className="text-gray-200">{category.description}</p>
               </div>
             );
           })}

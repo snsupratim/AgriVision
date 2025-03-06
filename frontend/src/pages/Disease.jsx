@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Upload, AlertCircle, Check } from "lucide-react";
+import { Upload, Loader, AlertCircle, Check } from "lucide-react";
 
 const Disease = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -29,11 +29,11 @@ const Disease = () => {
     setError(null);
 
     const formData = new FormData();
-    formData.append("image", selectedFile);
-    formData.append("crop_type", cropType);
+    formData.append("file", selectedFile);
+    formData.append("crop", cropType);
 
     try {
-      const response = await fetch("http://localhost:8000/predict", {
+      const response = await fetch("http://127.0.0.1:8000/predict", {
         method: "POST",
         body: formData,
       });
@@ -41,7 +41,7 @@ const Disease = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Prediction failed");
+        throw new Error("Prediction failed");
       }
 
       setPrediction(data);
@@ -53,110 +53,98 @@ const Disease = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-green-400 mb-6">
-            Crop Disease Detection
-          </h1>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            Upload an image of your crop leaves to detect diseases and get
-            detailed remedies.
-          </p>
+    <div className="min-h-screen flex flex-col items-center justify-center  text-white p-6">
+      <h1 className="text-4xl font-bold text-green-400 mb-4">
+        Crop Disease Detection
+      </h1>
+      <p className="text-gray-300 mb-6">
+        Upload an image of a crop leaf to detect diseases.
+      </p>
+
+      <div className="w-full max-w-md  p-6 rounded-lg shadow-lg">
+        <label className="block text-white mb-2">Select Crop Type:</label>
+        <select
+          value={cropType}
+          onChange={(e) => setCropType(e.target.value)}
+          className="w-full p-2 rounded-lg border border-green-400 bg-black text-white mb-4"
+        >
+          <option value="Tomato">Tomato</option>
+          <option value="Rice">Rice</option>
+          <option value="Bell Pepper">Bell Pepper</option>
+          <option value="Potato">Potato</option>
+          <option value="Apple">Apple</option>
+        </select>
+
+        <div className="mb-4">
+          <label
+            htmlFor="image-upload"
+            className="flex flex-col items-center justify-center w-full h-64 border-2 border-green-400 border-dashed rounded-lg cursor-pointer hover:bg-white/5"
+          >
+            {preview ? (
+              <img
+                src={preview}
+                alt="Preview"
+                className="h-full w-full object-contain rounded-lg"
+              />
+            ) : (
+              <div className="flex flex-col items-center justify-center py-6">
+                <Upload className="w-12 h-12 text-green-400 mb-2" />
+                <p className="text-sm text-gray-300">
+                  Click to upload or drag & drop
+                </p>
+              </div>
+            )}
+          </label>
+          <input
+            id="image-upload"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={handleFileSelect}
+          />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8">
-            <div className="mb-4">
-              <label className="block text-white mb-2">Select Crop Type:</label>
-              <select
-                value={cropType}
-                onChange={(e) => setCropType(e.target.value)}
-                className="w-full p-2 rounded-lg border border-green-400 bg-black text-white"
-              >
-                <option value="Tomato">Tomato</option>
-                <option value="Pepper Bell">Pepper Bell</option>
-              </select>
-            </div>
-
-            <div className="mb-8">
-              <label
-                htmlFor="image-upload"
-                className="flex flex-col items-center justify-center w-full h-64 border-2 border-green-400 border-dashed rounded-lg cursor-pointer hover:bg-white/5"
-              >
-                {preview ? (
-                  <img
-                    src={preview}
-                    alt="Preview"
-                    className="h-full w-full object-contain"
-                  />
-                ) : (
-                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                    <Upload className="w-12 h-12 text-green-400 mb-4" />
-                    <p className="text-sm text-green-400">
-                      Click to upload or drag and drop
-                    </p>
-                  </div>
-                )}
-                <input
-                  id="image-upload"
-                  type="file"
-                  className="hidden"
-                  accept="image/*"
-                  onChange={handleFileSelect}
-                />
-              </label>
-            </div>
-
-            <button
-              onClick={handleSubmit}
-              disabled={loading || !selectedFile}
-              className="w-full py-3 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-green-800 disabled:cursor-not-allowed transition-colors"
-            >
-              {loading ? "Analyzing..." : "Detect Disease"}
-            </button>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8">
-            {error && (
-              <div className="flex items-center text-red-400 mb-4">
-                <AlertCircle className="w-5 h-5 mr-2" />
-                {error}
-              </div>
-            )}
-
-            {prediction && (
-              <div className="space-y-6">
-                <div className="flex items-center">
-                  <Check className="w-6 h-6 text-green-400 mr-2" />
-                  <h3 className="text-xl font-semibold text-green-400">
-                    Detection Results
-                  </h3>
-                </div>
-                <div className="space-y-4">
-                  <p className="text-white text-lg">
-                    Detected Disease: {prediction.prediction}
-                  </p>
-                  <p className="text-white text-lg">
-                    Confidence: {(prediction.confidence * 100).toFixed(2)}%
-                  </p>
-                  <h3 className="text-green-400 text-lg font-semibold">
-                    Disease Details
-                  </h3>
-                  <p className="text-white text-lg">
-                    {prediction.disease_info}
-                  </p>
-                </div>
-              </div>
-            )}
-            {!error && !prediction && (
-              <div className="text-center text-gray-300">
-                Upload an image to see the detection results
-              </div>
-            )}
-          </div>
-        </div>
+        <button
+          onClick={handleSubmit}
+          className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg"
+        >
+          {loading ? (
+            <Loader className="animate-spin mx-auto" />
+          ) : (
+            "Predict Disease"
+          )}
+        </button>
       </div>
+
+      {error && (
+        <div className="mt-4 bg-red-500 text-white p-3 rounded-lg flex items-center">
+          <AlertCircle className="mr-2" /> {error}
+        </div>
+      )}
+
+      {prediction && (
+        <div className="mt-6 w-full max-w-md bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-bold text-green-400 mb-2">
+            Prediction Result
+          </h2>
+          <div className="p-4 border border-green-400 rounded-lg bg-gray-900">
+            <p className="text-lg">
+              <span className="font-semibold text-green-300">Disease:</span>{" "}
+              {prediction.predicted_class}
+            </p>
+            <p className="text-lg">
+              <span className="font-semibold text-green-300">Confidence:</span>{" "}
+              {prediction.confidence * 100}%
+            </p>
+            <p className="text-lg">
+              <span className="font-semibold text-green-300">
+                Disease Info:
+              </span>{" "}
+              {prediction.disease_info}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -17,6 +17,14 @@ import PurchaseSuccessPage from "./pages/PurchaseSuccessPage";
 import PurchaseCancelPage from "./pages/PurchaseCancelPage";
 import MainPage from "./pages/MainPage";
 import Disease from "./pages/Disease";
+import Footer from "./pages/Footer";
+import Recommendation from "./pages/Recommendation";
+import Vegetation_index from "./pages/Vegetation_index";
+
+import "leaflet/dist/leaflet.css";
+import "leaflet-draw/dist/leaflet.draw.css";
+import Chatbot from "./pages/Chatbot";
+import Yield from "./pages/Yield";
 
 function App() {
   const { user, checkAuth, checkingAuth } = useUserStore();
@@ -44,6 +52,7 @@ function App() {
 
       <div className="relative z-50 pt-20">
         <Navbar />
+        <Chatbot />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/marketplace" element={<HomePage />} />
@@ -78,7 +87,20 @@ function App() {
             path="/disease-prediction"
             element={user ? <Disease /> : <Navigate to="/login" />}
           />
+          <Route
+            path="/crop-recommendation"
+            element={user ? <Recommendation /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/vegetation-index"
+            element={user ? <Vegetation_index /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/yield-prediction"
+            element={user ? <Yield /> : <Navigate to="/login" />}
+          />
         </Routes>
+        <Footer />
       </div>
       <Toaster />
     </div>

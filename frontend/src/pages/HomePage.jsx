@@ -4,13 +4,41 @@ import { useProductStore } from "../stores/useProductStore";
 import FeaturedProducts from "../components/FeaturedProducts";
 
 const categories = [
-  { href: "/jeans", name: "Jeans", imageUrl: "/jeans.jpg" },
-  { href: "/t-shirts", name: "T-shirts", imageUrl: "/tshirts.jpg" },
-  { href: "/shoes", name: "Shoes", imageUrl: "/shoes.jpg" },
-  { href: "/glasses", name: "Glasses", imageUrl: "/glasses.png" },
-  { href: "/jackets", name: "Jackets", imageUrl: "/jackets.jpg" },
-  { href: "/suits", name: "Suits", imageUrl: "/suits.jpg" },
-  { href: "/bags", name: "Tomato", imageUrl: "/bags.jpg" },
+  {
+    href: "/seeds",
+    name: "Seeds & Planting Materials",
+    imageUrl: "/seeds.jpg",
+  },
+  {
+    href: "/fertilizers",
+    name: "Fertilizers & Soil Health",
+    imageUrl: "/fertilizers.jpg",
+  },
+  {
+    href: "/pesticides",
+    name: "Pesticides & Crop Protection",
+    imageUrl: "/pesticides.jpg",
+  },
+  {
+    href: "/irrigation",
+    name: "Irrigation & Water Management",
+    imageUrl: "/irrigation.jpg",
+  },
+  {
+    href: "/machinery",
+    name: "Farm Machinery & Tools",
+    imageUrl: "/firm-machinary.jpg",
+  },
+  // {
+  //   href: "/dairy",
+  //   name: "Animal Husbandry & Dairy Equipment",
+  //   imageUrl: "/suits.jpg",
+  // },
+  // {
+  //   href: "/smart-farming",
+  //   name: "Agri-Tech & Smart Farming",
+  //   imageUrl: "/bags.jpg",
+  // },
 ];
 
 const HomePage = () => {
@@ -36,9 +64,9 @@ const HomePage = () => {
           ))}
         </div>
 
-        {!isLoading && products.length > 0 && (
+        {/* {!isLoading && products.length > 0 && (
           <FeaturedProducts featuredProducts={products} />
-        )}
+        )} */}
       </div>
     </div>
   );
