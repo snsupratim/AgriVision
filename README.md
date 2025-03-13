@@ -102,7 +102,8 @@ Submit a Pull Request (PR) for review.
 
 You can contribute to AgriVision by working on:
 
-- 🛒 Marketplace Enhancements – Improve the farmer marketplace with better UI, search filters, and payment enhancements.
+- 🛒 **[Fix Navbar: Show Cart Tab Only in Marketplace](https://github.com/snsupratim/AgriVision/issues/1)**
+
 - 🐞 Bug Fixes & Performance Optimization
 - 🌍 Localization & Language Support
 - 📈 AI Model Improvements (Crop Prediction, Disease Detection, etc.)
