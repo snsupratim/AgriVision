@@ -106,6 +106,7 @@ You can contribute to AgriVision by working on:
 - 💰 **[Change $ Sign to ₹ Across the Platform](https://github.com/snsupratim/AgriVision/issues/2)**
 - 🌍 **[Add Multilingual Support (Hindi & English)](https://github.com/snsupratim/AgriVision/issues/3)**
 - 🎨 **[Improve Landing Page Design & Card Styling with Tailwind CSS](https://github.com/snsupratim/AgriVision/issues/4)**
+- 🤖 **[Enhance Chatbot Responses for Farmers using LangChain & Gemini](https://github.com/snsupratim/Farmer-Bot/issues/1)**
 
 ## Check the Issues Tab for active contribution opportunities! 🚀
 
