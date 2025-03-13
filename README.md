@@ -68,7 +68,7 @@ npm run build
 npm run start
 ```
 
-### 💡 Contribution Guide
+## 💡 Contribution Guide
 
     We welcome open-source contributions! Whether you want to improve the marketplace, optimize AI models, or enhance security, your help is highly appreciated.
 
@@ -81,3 +81,35 @@ npm run start
 git clone https://github.com/your-username/AgriVision.git
 cd AgriVision
 ```
+
+3. Create a new branch for your feature:
+
+```shell
+git checkout -b feature-branch-name
+Raise an issue (if not already available).
+```
+
+4. Implement your changes and commit them:
+
+```shell
+git add .
+git commit -m "Added feature: [Brief Description]"
+git push origin feature-branch-name
+Submit a Pull Request (PR) for review.
+```
+
+### 🚀 Issues Available for Contribution
+
+You can contribute to AgriVision by working on:
+
+- 🛒 Marketplace Enhancements – Improve the farmer marketplace with better UI, search filters, and payment enhancements.
+- 🐞 Bug Fixes & Performance Optimization
+- 🌍 Localization & Language Support
+- 📈 AI Model Improvements (Crop Prediction, Disease Detection, etc.)
+- 💳 Payment & Checkout Enhancements
+- 🔌 API Integrations
+  Check the Issues Tab for active contribution opportunities! 🚀
+
+### 📬 Need Help?
+
+If you have any questions, feel free to start a discussion or raise an issue. We appreciate your contributions and support in making AgriVision a powerful tool for farmers worldwide! 🌱🚀
