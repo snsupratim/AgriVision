@@ -5,33 +5,34 @@ AgriVision is an open-source initiative aimed at empowering farmers with AI-driv
 🌟 About This Application
 AgriVision provides a comprehensive digital ecosystem for farmers, combining e-commerce functionalities with AI-powered agricultural insights.
 
-🔥 Core Features
-🚀 Project Setup
-🗄️ MongoDB & Redis Integration
-💳 Stripe Payment Setup
-🔐 Robust Authentication System
-🔑 JWT with Refresh/Access Tokens
-📝 User Signup & Login
-🛒 E-Commerce Core
-📦 Product & Category Management
-🛍️ Shopping Cart Functionality
-💰 Checkout with Stripe
-🏷️ Coupon Code System
-👑 Admin Dashboard
-📊 Sales Analytics
-🎨 Tailwind CSS for UI
-🛒 Cart & Checkout Process
-🔒 Security & Data Protection
-🛡️ Caching with Redis
-🔄 Microservices Architecture
-🌱 AI-Powered Agricultural Microservices
-AgriVision also integrates various AI-based microservices to provide smart insights for farmers:
+- 🚀 Project Setup
+- 🗄️ MongoDB & Redis Integration
+- 💳 Stripe Payment Setup
+- 🔐 Robust Authentication System
+- 🔑 JWT with Refresh/Access Tokens
+- 📝 User Signup & Login
+- 🛒 E-Commerce Core
+- 📦 Product & Category Management
+- 🛍️ Shopping Cart Functionality
+- 💰 Checkout with Stripe
+- 🏷️ Coupon Code System
+- 👑 Admin Dashboard
+- 📊 Sales Analytics
+- 🎨 Design with Tailwind
+- 🛒 Cart & Checkout Process
+- 🔒 Security
+- 🛡️ Data Protection
+- 🚀Caching with Redis
+- ⌛ And a lot more
+- 🔄 Microservices Architecture
+- 🌱 AI-Powered Agricultural Microservices
+  AgriVision also integrates various AI-based microservices to provide smart insights for farmers:
 
-🏥 Crop-Disease Prediction – Identifies plant diseases using AI-powered image recognition.
-📈 Vegetation Index – Provides insights into soil and crop health using remote sensing data.
-🌾 Crop Recommendation System – Suggests the best crops to grow based on soil, weather, and historical data.
-🌾 Yield Prediction – Uses AI models to predict potential crop yield based on environmental factors.
-Each of these microservices is hosted separately on GitHub and operates as an independent module, allowing for scalability and flexibility.
+- 🏥 Crop-Disease Prediction – Identifies plant diseases using AI-powered image recognition.
+- 📈 Vegetation Index – Provides insights into soil and crop health using remote sensing data.
+- 🌾 Crop Recommendation System – Suggests the best crops to grow based on soil, weather, and historical data.
+- 🌾 Yield Prediction – Uses AI models to predict potential crop yield based on environmental factors.
+  Each of these microservices is hosted separately on GitHub and operates as an independent module, allowing for scalability and flexibility.
 
 ### Setup .env file
 
