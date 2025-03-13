@@ -103,13 +103,10 @@ Submit a Pull Request (PR) for review.
 You can contribute to AgriVision by working on:
 
 - 🛒 **[Fix Navbar: Show Cart Tab Only in Marketplace](https://github.com/snsupratim/AgriVision/issues/1)**
+- 💰 **[Change $ Sign to ₹ Across the Platform](https://github.com/snsupratim/AgriVision/issues/2)**
+- 🌍 **[Add Multilingual Support (Hindi & English)](https://github.com/snsupratim/AgriVision/issues/3)**
 
-- 🐞 Bug Fixes & Performance Optimization
-- 🌍 Localization & Language Support
-- 📈 AI Model Improvements (Crop Prediction, Disease Detection, etc.)
-- 💳 Payment & Checkout Enhancements
-- 🔌 API Integrations
-  Check the Issues Tab for active contribution opportunities! 🚀
+## Check the Issues Tab for active contribution opportunities! 🚀
 
 ### 📬 Need Help?
 
