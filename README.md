@@ -105,6 +105,7 @@ You can contribute to AgriVision by working on:
 - 🛒 **[Fix Navbar: Show Cart Tab Only in Marketplace](https://github.com/snsupratim/AgriVision/issues/1)**
 - 💰 **[Change $ Sign to ₹ Across the Platform](https://github.com/snsupratim/AgriVision/issues/2)**
 - 🌍 **[Add Multilingual Support (Hindi & English)](https://github.com/snsupratim/AgriVision/issues/3)**
+- 🎨 **[Improve Landing Page Design & Card Styling with Tailwind CSS](https://github.com/snsupratim/AgriVision/issues/4)**
 
 ## Check the Issues Tab for active contribution opportunities! 🚀
 
