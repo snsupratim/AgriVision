@@ -1,6 +1,5 @@
-<h1 align="center">🌾 AgriVision 🚜- AI-powered solution to  take care farmers . </h1>
-
-AgriVision is an open-source initiative aimed at empowering farmers with AI-driven solutions and an integrated marketplace for seamless trading. This project consists of multiple microservices, including crop-disease prediction, vegetation index, crop recommendation, and yield prediction, all hosted in separate GitHub repositories.
+<h1 align="center">🌾 AgriVision 🚜 - AI-Powered Solution to Empower Farmers</h1>
+AgriVision is an open-source initiative aimed at helping farmers with AI-driven solutions and an integrated marketplace for seamless trading. This project consists of multiple microservices, including crop-disease prediction, vegetation index, crop recommendation, and yield prediction, all hosted in separate GitHub repositories.
 
 🌟 About This Application
 AgriVision provides a comprehensive digital ecosystem for farmers, combining e-commerce functionalities with AI-powered agricultural insights.
@@ -33,9 +32,12 @@ AgriVision also integrates various AI-based microservices to provide smart insig
 🌾 Yield Prediction – Uses AI models to predict potential crop yield based on environmental factors.
 Each of these microservices is hosted separately on GitHub and operates as an independent module, allowing for scalability and flexibility.
 
-### Setup .env file
+⚙️ Setup .env File
+Before running the application, create a .env file in the root directory and add the following configurations:
 
-```bash
+bash
+Copy
+Edit
 PORT=5000
 MONGO_URI=your_mongo_uri
 
@@ -51,49 +53,57 @@ CLOUDINARY_API_SECRET=your_api_secret
 STRIPE_SECRET_KEY=your_stripe_secret_key
 CLIENT_URL=http://localhost:5173
 NODE_ENV=development
-```
-
-### Run this app locally
-
-```shell
+🚀 Running the Application Locally
+1️⃣ Install Dependencies
+shell
+Copy
+Edit
+npm install
+2️⃣ Build the Application
+shell
+Copy
+Edit
 npm run build
-```
-
-### Start the app
-
-```shell
+3️⃣ Start the Application
+shell
+Copy
+Edit
 npm run start
-```
-
 💡 Contribution Guide
-We welcome open-source contributions! Whether you want to improve the marketplace, optimize AI models, or enhance security, your help is appreciated.
+We welcome open-source contributions! Whether you want to improve the marketplace, optimize AI models, or enhance security, your help is highly appreciated.
 
 📝 How to Contribute
 Fork this repository 📌
-Clone your fork and set up the project locally
+
+Clone your fork and set up the project locally:
+
 bash
 Copy
 Edit
 git clone https://github.com/your-username/AgriVision.git
 cd AgriVision
-Create a new branch for your feature
+Create a new branch for your feature:
+
 bash
 Copy
 Edit
 git checkout -b feature-branch-name
-Raise an issue (if not already available)
-Implement your changes and commit them
+Raise an issue (if not already available).
+
+Implement your changes and commit them:
+
 bash
 Copy
 Edit
 git add .
 git commit -m "Added feature: [Brief Description]"
 git push origin feature-branch-name
-Submit a Pull Request (PR) for review
+Submit a Pull Request (PR) for review.
+
 🚀 Issues Available for Contribution
 You can contribute to AgriVision by working on:
 
-🛒 Marketplace Enhancements
+🛒 Marketplace Enhancements – Improve the farmer marketplace with better UI, search filters, and payment enhancements.
 🐞 Bug Fixes & Performance Optimization
 🌍 Localization & Language Support
 📈 AI Model Improvements (Crop Prediction, Disease Detection, etc.)
