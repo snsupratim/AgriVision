@@ -25,8 +25,10 @@ AgriVision provides a comprehensive digital ecosystem for farmers, combining e-c
 - 🚀Caching with Redis
 - ⌛ And a lot more
 - 🔄 Microservices Architecture
-- 🌱 AI-Powered Agricultural Microservices
-  AgriVision also integrates various AI-based microservices to provide smart insights for farmers:
+
+### 🌱 AI-Powered Agricultural Microservices
+
+AgriVision also integrates various AI-based microservices to provide smart insights for farmers:
 
 - 🏥 Crop-Disease Prediction – Identifies plant diseases using AI-powered image recognition.
 - 📈 Vegetation Index – Provides insights into soil and crop health using remote sensing data.
@@ -64,4 +66,18 @@ npm run build
 
 ```shell
 npm run start
+```
+
+### 💡 Contribution Guide
+
+    We welcome open-source contributions! Whether you want to improve the marketplace, optimize AI models, or enhance security, your help is highly appreciated.
+
+## 📝 How to Contribute
+
+1. Fork this repository 📌
+2. Clone your fork and set up the project locally:
+
+```shell
+git clone https://github.com/your-username/AgriVision.git
+cd AgriVision
 ```
