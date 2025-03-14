@@ -9,8 +9,8 @@ const categories = [
   "pesticides",
   "irrigation",
   "machinery",
-  // "dairy",
-  // "smart-farming",
+  "dairy",
+  "smart-farming",
 ];
 
 const CreateProductForm = () => {

@@ -9,7 +9,6 @@ import GiftCouponCard from "../components/GiftCouponCard";
 
 const CartPage = () => {
 	const { cart } = useCartStore();
-
 	return (
 		<div className='py-8 md:py-16'>
 			<div className='mx-auto max-w-screen-xl px-4 2xl:px-0'>
@@ -62,7 +61,7 @@ const EmptyCartUI = () => (
 		<p className='text-gray-400'>Looks like you {"haven't"} added anything to your cart yet.</p>
 		<Link
 			className='mt-4 rounded-md bg-emerald-500 px-6 py-2 text-white transition-colors hover:bg-emerald-600'
-			to='/'
+			to='/marketplace'
 		>
 			Start Shopping
 		</Link>
