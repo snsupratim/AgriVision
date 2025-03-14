@@ -36,7 +36,7 @@ const Navbar = () => {
               MarketPlace
             </Link>
 
-            {(user && location.pathname === "/marketplace") && (
+            {(user && location.pathname.startsWith("/marketplace") || location.pathname.startsWith("/category/") || location.pathname.startsWith("/cart")) && (
               <Link
                 to={"/cart"}
                 className="relative group text-gray-300 hover:text-emerald-400 transition duration-300 
