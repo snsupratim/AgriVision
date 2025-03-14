@@ -1,5 +1,5 @@
 import { ShoppingCart, UserPlus, LogIn, LogOut, Lock } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useUserStore } from "../stores/useUserStore";
 import { useCartStore } from "../stores/useCartStore";
 
@@ -7,6 +7,7 @@ const Navbar = () => {
   const { user, logout } = useUserStore();
   const isAdmin = user?.role === "admin";
   const { cart } = useCartStore();
+  const location = useLocation();
 
   return (
     <header className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg z-40 transition-all duration-300 border-b border-emerald-800">
@@ -35,7 +36,7 @@ const Navbar = () => {
               MarketPlace
             </Link>
 
-            {user && (
+            {(user && location.pathname === "/marketplace") && (
               <Link
                 to={"/cart"}
                 className="relative group text-gray-300 hover:text-emerald-400 transition duration-300 
@@ -56,6 +57,7 @@ const Navbar = () => {
                 )}
               </Link>
             )}
+
             {isAdmin && (
               <Link
                 className="bg-emerald-700 hover:bg-emerald-600 text-white px-3 py-1 rounded-md font-medium
